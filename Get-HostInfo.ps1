@@ -1,0 +1,1 @@
+Get-ComputerInfo -Property "OsName","CsName","OsVersion" | Select-Object -Property @{e={$_.OsName};l="OS"}, @{e={$_.CsName};l="MAC Address"}, @{e={$_.OsVersion};l="OS Version"}
