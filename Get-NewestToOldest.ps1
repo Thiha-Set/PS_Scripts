@@ -1,6 +1,5 @@
-$dir = Read-Host "Enter absolute path to dir you want sorted"
-$ErrorActionPreference = "Stop"
-
+# @: Get the most recent to oldest files/folders in a directory
+$dir = Read-Host "Enter absolute path to dir you want sorted from most recent to oldest"
 try {
     
     cd $dir

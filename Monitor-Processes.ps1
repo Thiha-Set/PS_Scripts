@@ -1,3 +1,5 @@
+# @: Generate a spreadsheet (in .csv) of running processes on the current machine every "x" seconds
+# Will perpetually execute until stopped
 $interval = Read-Host "Enter the interval (in seconds) for which the list of processes will be generated"
 do{ 
     $date = Get-Date -Format "MM_dd_yyyy"
@@ -7,7 +9,7 @@ do{
     if(-not(Test-Path "./process_scans/")){
         mkdir "./process_scans";
     }
-    
+
     $processDetails | Export-Csv "./process_scans/process_scan_$($date).csv" -NoTypeInformation -Append
 
     Start-Sleep -Seconds $interval
